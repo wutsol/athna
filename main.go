@@ -4,7 +4,14 @@ import (
 	"gin-vue-admin/core"
 	"gin-vue-admin/global"
 	"gin-vue-admin/initialize"
+	"gin-vue-admin/rpc"
+	"gin-vue-admin/utils"
 )
+
+func init()  {
+	utils.InitSnowFlake()
+	rpc.InitRpc()
+}
 
 // @title Swagger Example API
 // @version 0.0.1

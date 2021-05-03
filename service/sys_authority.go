@@ -41,7 +41,7 @@ func CopyAuthority(copyInfo response.SysAuthorityCopyResponse) (err error, autho
 	var baseMenu []model.SysBaseMenu
 	for _, v := range menus {
 		intNum, _ := strconv.Atoi(v.MenuId)
-		v.SysBaseMenu.ID = uint(intNum)
+		v.SysBaseMenu.ID = int64(intNum)
 		baseMenu = append(baseMenu, v.SysBaseMenu)
 	}
 	copyInfo.Authority.SysBaseMenus = baseMenu

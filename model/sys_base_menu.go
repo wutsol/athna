@@ -29,7 +29,7 @@ type Meta struct {
 
 type SysBaseMenuParameter struct {
 	global.GVA_MODEL
-	SysBaseMenuID uint
+	SysBaseMenuID int64
 	Type          string `json:"type" gorm:"comment:地址栏携带参数为params还是query"`
 	Key           string `json:"key" gorm:"comment:地址栏携带参数的key"`
 	Value         string `json:"value" gorm:"comment:地址栏携带参数的值"`

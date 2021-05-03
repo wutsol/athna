@@ -21,3 +21,7 @@ type GetAuthorityId struct {
 }
 
 type Empty struct{}
+
+type IdReq struct {
+	Id int64 `json:"id" form:"id"`
+}

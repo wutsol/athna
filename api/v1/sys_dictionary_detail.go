@@ -83,7 +83,7 @@ func FindSysDictionaryDetail(c *gin.Context) {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	if err, resysDictionaryDetail := service.GetSysDictionaryDetail(detail.ID); err != nil {
+	if err, resysDictionaryDetail := service.GetSysDictionaryDetail(uint(detail.ID)); err != nil {
 		global.GVA_LOG.Error("查询失败!", zap.Any("err", err))
 		response.FailWithMessage("查询失败", c)
 	} else {

@@ -83,7 +83,7 @@ func FindSysOperationRecord(c *gin.Context) {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	if err, resysOperationRecord := service.GetSysOperationRecord(sysOperationRecord.ID); err != nil {
+	if err, resysOperationRecord := service.GetSysOperationRecord(uint(sysOperationRecord.ID)); err != nil {
 		global.GVA_LOG.Error("查询失败!", zap.Any("err", err))
 		response.FailWithMessage("查询失败", c)
 	} else {

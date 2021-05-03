@@ -26,7 +26,7 @@ func Upload(file model.ExaFileUploadAndDownload) error {
 //@param: id uint
 //@return: error, model.ExaFileUploadAndDownload
 
-func FindFile(id uint) (error, model.ExaFileUploadAndDownload) {
+func FindFile(id int64) (error, model.ExaFileUploadAndDownload) {
 	var file model.ExaFileUploadAndDownload
 	err := global.GVA_DB.Where("id = ?", id).First(&file).Error
 	return err, file

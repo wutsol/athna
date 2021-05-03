@@ -57,7 +57,7 @@ func BreakpointContinue(c *gin.Context) {
 		return
 	}
 
-	if err = service.CreateFileChunk(file.ID, pathc, chunkNumber); err != nil {
+	if err = service.CreateFileChunk(uint(file.ID), pathc, chunkNumber); err != nil {
 		global.GVA_LOG.Error("创建文件记录失败!", zap.Any("err", err))
 		response.FailWithMessage("创建文件记录失败", c)
 		return

@@ -79,7 +79,7 @@ func UpdateSysDictionary(c *gin.Context) {
 func FindSysDictionary(c *gin.Context) {
 	var dictionary model.SysDictionary
 	_ = c.ShouldBindQuery(&dictionary)
-	if err, sysDictionary := service.GetSysDictionary(dictionary.Type, dictionary.ID); err != nil {
+	if err, sysDictionary := service.GetSysDictionary(dictionary.Type, uint(dictionary.ID)); err != nil {
 		global.GVA_LOG.Error("查询失败!", zap.Any("err", err))
 		response.FailWithMessage("查询失败", c)
 	} else {
